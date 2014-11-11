@@ -1,0 +1,5 @@
+# molletnetwork isn't supposed to be used outside of kio-extras.
+# It doesn't even come with headers, so a -devel package would be stupid.
+addFilter("E: devel-file-in-non-devel-package")
+# Not libraries, plugins
+addFilter("E: library-not-linked-against-libc")

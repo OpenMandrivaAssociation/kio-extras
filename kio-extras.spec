@@ -1,0 +1,75 @@
+%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
+%define plasmaver %(echo %{version} |cut -d. -f1-3)
+
+Name: kio-extras
+Version: 5.1.0.1
+Release: 1
+Source0: ftp://ftp.kde.org/pub/kde/stable/plasma/%{plasmaver}/%{name}-%{version}.tar.xz
+Source1000: %{name}.rpmlintrc
+Patch0: kio-extras-5.1.0.1-link-tirpc-for-nfs.patch
+Summary: KDE 5 I/O Extras
+URL: http://kde.org/
+License: GPL
+Group: System/Libraries
+BuildRequires: cmake(ECM)
+BuildRequires: cmake(KF5DNSSD)
+BuildRequires: cmake(KF5KDELibs4Support)
+BuildRequires: cmake(KF5DocTools)
+BuildRequires: cmake(KF5CoreAddons)
+BuildRequires: cmake(KF5DBusAddons)
+BuildRequires: cmake(KF5ConfigWidgets)
+BuildRequires: cmake(KF5IconThemes)
+BuildRequires: cmake(KF5KIO)
+BuildRequires: cmake(KF5KHtml)
+BuildRequires: cmake(KF5Solid)
+BuildRequires: ninja
+
+%description
+KDE 5 I/O Extras
+
+%libpackage molletnetwork 5
+
+%prep
+%setup -qn %{name}-%{plasmaver}
+%apply_patches
+
+%cmake -G Ninja
+
+%build
+ninja -C build
+
+%install
+DESTDIR="%{buildroot}" ninja -C build install %{?_smp_mflags}
+%find_lang kfileaudiopreview5
+%find_lang kio_archive
+%find_lang kio_bookmarks
+%find_lang kio_fish
+%find_lang kio_info
+%find_lang kio_man
+%find_lang kio_nfs
+%find_lang kio_recentdocuments
+%find_lang kio_sftp
+%find_lang kio_smb
+%find_lang kio_thumbnail
+cat *.lang >all.lang
+
+%files -f all.lang
+%{_libdir}/libmolletnetwork.so
+%{_libdir}/plugins/*.so
+%{_datadir}/config.kcfg/*.kcfg
+%{_datadir}/dbus-1/interfaces/*.xml
+%{_datadir}/mime/packages/kf5_network.xml
+%{_datadir}/remoteview
+%{_datadir}/kio_bookmarks
+%{_datadir}/kio_desktop
+%{_datadir}/kio_docfilter
+%{_datadir}/kio_info
+%{_datadir}/konqsidebartng/virtual_folders/remote/*.desktop
+%{_datadir}/konqueror/dirtree/remote/*.desktop
+%{_datadir}/kservices5/kded/*.desktop
+%{_datadir}/kservices5/*.desktop
+%{_datadir}/kservices5/*.protocol
+%{_datadir}/kservicetypes5/*.desktop
+%doc %{_docdir}/HTML/en/kioslave5
+%doc %{_docdir}/HTML/en/kcontrol/kcmcgi
+%doc %{_docdir}/HTML/en/kcontrol/trash
