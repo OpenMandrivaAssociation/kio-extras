@@ -37,7 +37,8 @@ KDE 5 I/O Extras
 %setup -qn %{name}-%{plasmaver}
 %apply_patches
 
-%cmake -G Ninja
+%cmake -G Ninja \
+	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %build
 ninja -C build
@@ -59,7 +60,7 @@ cat *.lang >all.lang
 
 %files -f all.lang
 %{_libdir}/libmolletnetwork.so
-%{_libdir}/plugins/*.so
+%{_libdir}/qt5/plugins/*.so
 %{_datadir}/config.kcfg/*.kcfg
 %{_datadir}/dbus-1/interfaces/*.xml
 %{_datadir}/mime/packages/kf5_network.xml
