@@ -2,8 +2,8 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: kio-extras
-Version: 5.1.1
-Release: 2
+Version: 5.1.2
+Release: 1
 Source0: ftp://ftp.kde.org/pub/kde/stable/plasma/%{plasmaver}/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
 Patch0: kio-extras-5.1.0.1-link-tirpc-for-nfs.patch
