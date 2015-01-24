@@ -27,6 +27,7 @@ BuildRequires: cmake(KF5IconThemes)
 BuildRequires: cmake(KF5KIO)
 BuildRequires: cmake(KF5KHtml)
 BuildRequires: cmake(KF5Solid)
+BuildRequires: cmake(KF5Pty)
 BuildRequires: ninja
 Requires: %{mklibname molletnetwork 5} = %{EVRD}
 
