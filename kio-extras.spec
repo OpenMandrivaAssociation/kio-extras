@@ -2,7 +2,7 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: kio-extras
-Version: 5.2.1
+Version: 5.2.2
 Release: 1
 Source0: ftp://ftp.kde.org/pub/kde/%{stable}/plasma/%{plasmaver}/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
@@ -12,10 +12,21 @@ URL: http://kde.org/
 License: GPL
 Group: System/Libraries
 BuildRequires: openslp-devel
+BuildRequires: pkgconfig(exiv2)
+BuildRequires: pkgconfig(libmtp)
+BuildRequires: pkgconfig(libtirpc)
+BuildRequires: pkgconfig(OpenEXR)
+BuildRequires: pkgconfig(phonon4qt5)
+BuildRequires: pkgconfig(Qt5Core)
+BuildRequires: pkgconfig(Qt5DBus)
+BuildRequires: pkgconfig(Qt5Gui)
+BuildRequires: pkgconfig(Qt5Network)
+BuildRequires: pkgconfig(Qt5Svg)
+BuildRequires: pkgconfig(Qt5Test)
+BuildRequires: pkgconfig(Qt5Widgets)
+BuildRequires: pkgconfig(shared-mime-info)
 BuildRequires: pkgconfig(libssh) >= 0.6.0
 BuildRequires: pkgconfig(smbclient)
-BuildRequires: pkgconfig(libmtp)
-BuildRequires: shared-mime-info
 BuildRequires: cmake(ECM)
 BuildRequires: cmake(KF5DNSSD)
 BuildRequires: cmake(KF5KDELibs4Support)
@@ -34,7 +45,7 @@ Requires: %{mklibname molletnetwork 5} = %{EVRD}
 %libpackage molletnetwork 5
 
 %description
-KDE 5 I/O Extras
+KDE 5 I/O Extras.
 
 %prep
 %setup -qn %{name}-%{plasmaver}
