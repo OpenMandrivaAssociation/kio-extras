@@ -91,6 +91,6 @@ cat *.lang >all.lang
 %{_datadir}/kservices5/*.protocol
 %{_datadir}/kservicetypes5/*.desktop
 %{_datadir}/solid/actions/solid_mtp.desktop
-%doc %{_docdir}/HTML/en/kioslave5
-%doc %{_docdir}/HTML/en/kcontrol/kcmcgi
-%doc %{_docdir}/HTML/en/kcontrol/trash
+%doc %{_docdir}/HTML/*/kioslave5
+%doc %{_docdir}/HTML/*/kcontrol/kcmcgi
+%doc %{_docdir}/HTML/*/kcontrol/trash
