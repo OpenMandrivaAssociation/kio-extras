@@ -2,7 +2,7 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: kio-extras
-Version: 5.2.95
+Version: 5.3.0
 Release: 1
 Source0: ftp://ftp.kde.org/pub/kde/%{stable}/plasma/%{plasmaver}/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
@@ -39,7 +39,7 @@ BuildRequires: cmake(KF5KIO)
 BuildRequires: cmake(KF5KHtml)
 BuildRequires: cmake(KF5Solid)
 BuildRequires: cmake(KF5Pty)
-BuildRequires: ninja
+
 Requires: %{mklibname molletnetwork 5} = %{EVRD}
 
 %libpackage molletnetwork 5
@@ -51,14 +51,14 @@ KDE 5 I/O Extras.
 %setup -qn %{name}-%{plasmaver}
 %apply_patches
 
-%cmake -G Ninja \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+%cmake_kde5
 
 %build
-ninja -C build
+%ninja -C build
 
 %install
-DESTDIR="%{buildroot}" ninja -C build install %{?_smp_mflags}
+%ninja_install -C build
+
 %find_lang kfileaudiopreview5
 %find_lang kio_archive
 %find_lang kio_bookmarks
