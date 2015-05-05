@@ -42,7 +42,7 @@ BuildRequires: cmake(KF5Pty)
 
 Requires: %{mklibname molletnetwork 5} = %{EVRD}
 
-%libpackage molletnetwork 5
+%libpackage molletnetwork5 5
 
 %description
 KDE 5 I/O Extras.
