@@ -2,9 +2,9 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: kio-extras
-Version: 5.3.2
+Version: 15.08.0
 Release: 2
-Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/%{name}-%{version}.tar.xz
+Source0: http://download.kde.org/%{stable}/applications/%{version}/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
 Patch0: kio-extras-5.1.0.1-link-tirpc-for-nfs.patch
 Summary: KDE 5 I/O Extras
@@ -59,21 +59,7 @@ KDE 5 I/O Extras.
 %install
 %ninja_install -C build
 
-%find_lang kfileaudiopreview5
-%find_lang kio_archive
-%find_lang kio_bookmarks
-%find_lang kio_fish
-%find_lang kio_info
-%find_lang kio_man
-%find_lang kio_mtp
-%find_lang kio_nfs
-%find_lang kio_recentdocuments
-%find_lang kio_sftp
-%find_lang kio_smb
-%find_lang kio_thumbnail
-cat *.lang >all.lang
-
-%files -f all.lang
+%files
 %{_libdir}/qt5/plugins/*.so
 %{_libdir}/qt5/plugins/kf5/kio/*.so
 %{_datadir}/config.kcfg/*.kcfg
@@ -81,7 +67,6 @@ cat *.lang >all.lang
 %{_datadir}/mime/packages/kf5_network.xml
 %{_datadir}/remoteview
 %{_datadir}/kio_bookmarks
-%{_datadir}/kio_desktop
 %{_datadir}/kio_docfilter
 %{_datadir}/kio_info
 %{_datadir}/konqsidebartng/virtual_folders/remote/*.desktop
@@ -92,5 +77,4 @@ cat *.lang >all.lang
 %{_datadir}/kservicetypes5/*.desktop
 %{_datadir}/solid/actions/solid_mtp.desktop
 %doc %{_docdir}/HTML/*/kioslave5
-%doc %{_docdir}/HTML/*/kcontrol/kcmcgi
 %doc %{_docdir}/HTML/*/kcontrol/trash
