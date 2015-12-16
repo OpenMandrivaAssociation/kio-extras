@@ -2,7 +2,7 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: kio-extras
-Version:	15.08.3
+Version:	15.12.0
 Release:	1
 Source0: http://download.kde.org/%{stable}/applications/%{version}/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
