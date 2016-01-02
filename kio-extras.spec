@@ -62,6 +62,7 @@ KDE 5 I/O Extras.
 %files
 %{_libdir}/qt5/plugins/*.so
 %{_libdir}/qt5/plugins/kf5/kio/*.so
+%{_libdir}/qt5/plugins/kf5/kded/*.so
 %{_datadir}/config.kcfg/*.kcfg
 %{_datadir}/dbus-1/interfaces/*.xml
 %{_datadir}/mime/packages/kf5_network.xml
