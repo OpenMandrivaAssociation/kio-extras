@@ -72,7 +72,6 @@ KDE 5 I/O Extras.
 %{_datadir}/kio_info
 %{_datadir}/konqsidebartng/virtual_folders/remote/*.desktop
 %{_datadir}/konqueror/dirtree/remote/*.desktop
-%{_datadir}/kservices5/kded/*.desktop
 %{_datadir}/kservices5/*.desktop
 %{_datadir}/kservices5/*.protocol
 %{_datadir}/kservicetypes5/*.desktop
