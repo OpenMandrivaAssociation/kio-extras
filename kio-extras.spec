@@ -39,6 +39,7 @@ BuildRequires: cmake(KF5KIO)
 BuildRequires: cmake(KF5KHtml)
 BuildRequires: cmake(KF5Solid)
 BuildRequires: cmake(KF5Pty)
+BuildRequires: cmake(KF5Activities)
 
 Requires: %{mklibname molletnetwork5 5} = %{EVRD}
 
