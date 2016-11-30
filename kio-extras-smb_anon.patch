@@ -1,0 +1,11 @@
+--- kio-extras-16.08.3/smb/kio_smb_auth.cpp.orig	2016-11-30 00:30:43.199074905 +0000
++++ kio-extras-16.08.3/smb/kio_smb_auth.cpp	2016-11-30 00:31:05.837258325 +0000
+@@ -199,6 +199,8 @@
+ 	/* Enable Kerberos support */
+ 	smbc_setOptionUseKerberos(smb_context, 1);
+ 	smbc_setOptionFallbackAfterKerberos(smb_context, 1);
++
++	smbc_setOptionUseCCache(smb_context, 0);
+ #else
+ 	smb_context->debug = debug_level;
+ 	smb_context->callbacks.auth_fn = NULL;

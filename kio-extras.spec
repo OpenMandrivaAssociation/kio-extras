@@ -3,10 +3,12 @@
 
 Name: kio-extras
 Version:	16.08.3
-Release:	1
+Release:	2
 Source0: http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
 Patch0: kio-extras-5.1.0.1-link-tirpc-for-nfs.patch
+# https://bugzilla.samba.org/show_bug.cgi?id=12456
+Patch1:	kio-extras-smb_anon.patch
 Summary: KDE 5 I/O Extras
 URL: http://kde.org/
 License: GPL
