@@ -2,7 +2,7 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: kio-extras
-Version:	16.12.2
+Version:	17.04.0
 Release:	1
 Source0: http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
@@ -62,8 +62,23 @@ KDE 5 I/O Extras.
 
 %install
 %ninja_install -C build
+%find_lang kfileaudiopreview5
+%find_lang kio5_activities
+%find_lang kio_archive
+%find_lang kio_bookmarks
+%find_lang kio_fish
+%find_lang kio_info
+%find_lang kio_man
+%find_lang kio_mtp
+%find_lang kio_nfs
+%find_lang kio_recentdocuments
+%find_lang kio_sftp
+%find_lang kio_smb
+%find_lang kio_thumbnail
+%find_lang kioslave5 --with-html
+cat *.lang >all.lang
 
-%files
+%files -f all.lang
 %{_libdir}/qt5/plugins/*.so
 %{_libdir}/qt5/plugins/kf5/kio/*.so
 %{_libdir}/qt5/plugins/kf5/kded/*.so
@@ -80,5 +95,3 @@ KDE 5 I/O Extras.
 %{_datadir}/kservices5/*.protocol
 %{_datadir}/kservicetypes5/*.desktop
 %{_datadir}/solid/actions/solid_mtp.desktop
-%doc %{_docdir}/HTML/*/kioslave5
-%doc %{_docdir}/HTML/*/kcontrol/trash
