@@ -1,5 +1,5 @@
---- kio-extras-5.1.95/nfs/CMakeLists.txt.0000~	2015-01-08 16:39:07.000000000 +0100
-+++ kio-extras-5.1.95/nfs/CMakeLists.txt	2015-01-23 17:51:55.416974831 +0100
+--- kio-extras-17.04.2/nfs/CMakeLists.txt.0000~	2017-05-22 05:30:06.000000000 +0200
++++ kio-extras-17.04.2/nfs/CMakeLists.txt	2017-06-19 15:31:04.158469938 +0200
 @@ -1,10 +1,14 @@
  ## Check for XDR functions
  include(CheckFunctionExists)
@@ -20,7 +20,7 @@
  if (NOT HAVE_XDR_U_INT64_T AND NOT HAVE_XDR_UINT64_T AND NOT HAVE_XDR_U_HYPER AND NOT HAVE_XDR_U_LONGLONG_T)
      message(FATAL_ERROR "Could not find 64-bit XDR datatype functions!")
 @@ -26,7 +30,7 @@ endif (HAVE_XDR_U_LONGLONG_T)
- add_definitions(-DTRANSLATION_DOMAIN=\"kio_nfs\")
+ add_definitions(-DTRANSLATION_DOMAIN=\"kio5_nfs\")
  
  add_library(kio_nfs MODULE kio_nfs.cpp nfsv2.cpp nfsv3.cpp rpc_nfs3_prot_xdr.c rpc_nfs2_prot_xdr.c)
 -target_link_libraries(kio_nfs KF5::KIOCore KF5::I18n Qt5::Network)
