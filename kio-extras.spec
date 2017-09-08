@@ -5,7 +5,7 @@
 %endif
 
 Name: kio-extras
-Version:	17.04.2
+Version:	17.08.1
 Release:	1
 Source0: http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
@@ -47,12 +47,24 @@ BuildRequires: cmake(KF5Solid)
 BuildRequires: cmake(KF5Pty)
 BuildRequires: cmake(KF5Activities)
 
-Requires: %{mklibname molletnetwork5 5} = %{EVRD}
+Requires: %{mklibname molletnetwork5 17} = %{EVRD}
+Requires: %{mklibname kioarchive 5} = %{EVRD}
 
-%libpackage molletnetwork5 5
+%define kioarchive_devel %{mklibname -d kioarchive}
+
+%libpackage molletnetwork5 17
+%libpackage kioarchive 5
 
 %description
 KDE 5 I/O Extras.
+
+%package -n %{kioarchive_devel}
+Summary: Development files for the KIO Archive library
+Group: Development/KDE and Qt
+Requires: %{mklibname kioarchive 5} = %{EVRD}
+
+%description -n %{kioarchive_devel}
+Development files for the KIO Archive library
 
 %prep
 %setup -qn %{name}-%{plasmaver}
@@ -84,3 +96,7 @@ KDE 5 I/O Extras.
 %{_datadir}/kservices5/*.protocol
 %{_datadir}/kservicetypes5/*.desktop
 %{_datadir}/solid/actions/solid_mtp.desktop
+
+%files -n %{kioarchive_devel}
+%{_includedir}/KF5/*
+%{_libdir}/cmake/KioArchive
