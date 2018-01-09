@@ -5,7 +5,7 @@
 %endif
 
 Name: kio-extras
-Version:	17.11.90
+Version:	17.12.1
 Release:	1
 Source0: http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
