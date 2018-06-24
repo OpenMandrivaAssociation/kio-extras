@@ -5,7 +5,7 @@
 %endif
 
 Name: kio-extras
-Version:	 17.12.2
+Version:	 18.04.2
 Release:	1
 Source0: http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
@@ -47,12 +47,13 @@ BuildRequires: cmake(KF5Solid)
 BuildRequires: cmake(KF5Pty)
 BuildRequires: cmake(KF5Activities)
 
-Requires: %{mklibname molletnetwork5 17} = %{EVRD}
+Requires: %{mklibname molletnetwork5 18} = %{EVRD}
+Obsoletes: %{mklibname molletnetwork5 17} < %{EVRD}
 Requires: %{mklibname kioarchive 5} = %{EVRD}
 
 %define kioarchive_devel %{mklibname -d kioarchive}
 
-%libpackage molletnetwork5 17
+%libpackage molletnetwork5 18
 %libpackage kioarchive 5
 
 %description
