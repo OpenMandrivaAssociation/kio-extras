@@ -1,8 +1,5 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
-%ifarch %{arm} aarch64
-%global optflags %{optflags} -fuse-ld=bfd
-%endif
 
 Name: kio-extras
 Version:	 18.04.2
