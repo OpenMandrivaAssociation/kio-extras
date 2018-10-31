@@ -3,7 +3,7 @@
 
 Name: kio-extras
 Version:	 18.08.2
-Release:	1
+Release:	2
 Source0: http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
 Patch0: kio-extras-5.1.0.1-link-tirpc-for-nfs.patch
