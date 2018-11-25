@@ -2,7 +2,7 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: kio-extras
-Version:	 18.08.3
+Version:	 18.11.80
 Release:	1
 Source0: http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
@@ -28,7 +28,7 @@ BuildRequires: pkgconfig(Qt5Svg)
 BuildRequires: pkgconfig(Qt5Test)
 BuildRequires: pkgconfig(Qt5Widgets)
 BuildRequires: pkgconfig(shared-mime-info)
-BuildRequires: pkgconfig(libssh) >= 0.6.0
+BuildRequires: pkgconfig(libssh) >= 0.8.5
 BuildRequires: pkgconfig(smbclient)
 BuildRequires: cmake(ECM)
 BuildRequires: cmake(KF5DNSSD)
@@ -78,11 +78,14 @@ Development files for the KIO Archive library
 %find_lang all --all-name --with-html
 
 %files -f all.lang
+%{_sysconfdir}/xdg/kio-extras.categories
 %{_libdir}/qt5/plugins/*.so
 %{_libdir}/qt5/plugins/kf5/kio/*.so
+%{_libdir}/qt5/plugins/kf5/kiod/*.so
 %{_libdir}/qt5/plugins/kf5/kded/*.so
 %{_datadir}/config.kcfg/*.kcfg
 %{_datadir}/dbus-1/interfaces/*.xml
+%{_datadir}/dbus-1/services/*.service
 %{_datadir}/mime/packages/kf5_network.xml
 %{_datadir}/remoteview
 %{_datadir}/kio_bookmarks
