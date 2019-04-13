@@ -1,9 +1,10 @@
+%define major %(echo %{version} |cut -d. -f1)
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: kio-extras
-Version:	 18.12.3
-Release:	2
+Version:	 19.04.0
+Release:	1
 Source0: http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
 Patch0: kio-extras-5.1.0.1-link-tirpc-for-nfs.patch
@@ -44,13 +45,14 @@ BuildRequires: cmake(KF5Solid)
 BuildRequires: cmake(KF5Pty)
 BuildRequires: cmake(KF5Activities)
 
-Requires: %{mklibname molletnetwork5 18} = %{EVRD}
+Requires: %{mklibname molletnetwork5 %{major}} = %{EVRD}
+Obsoletes: %{mklibname molletnetwork5 18} < %{EVRD}
 Obsoletes: %{mklibname molletnetwork5 17} < %{EVRD}
 Requires: %{mklibname kioarchive 5} = %{EVRD}
 
 %define kioarchive_devel %{mklibname -d kioarchive}
 
-%libpackage molletnetwork5 18
+%libpackage molletnetwork5 %{major}
 %libpackage kioarchive 5
 
 %description
@@ -83,6 +85,7 @@ Development files for the KIO Archive library
 %{_libdir}/qt5/plugins/kf5/kio/*.so
 %{_libdir}/qt5/plugins/kf5/kiod/*.so
 %{_libdir}/qt5/plugins/kf5/kded/*.so
+%{_libdir}/qt5/plugins/kf5/parts/*.so
 %{_datadir}/config.kcfg/*.kcfg
 %{_datadir}/dbus-1/interfaces/*.xml
 %{_datadir}/dbus-1/services/*.service

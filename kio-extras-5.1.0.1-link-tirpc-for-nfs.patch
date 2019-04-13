@@ -1,5 +1,6 @@
---- kio-extras-17.04.2/nfs/CMakeLists.txt.0000~	2017-05-22 05:30:06.000000000 +0200
-+++ kio-extras-17.04.2/nfs/CMakeLists.txt	2017-06-19 15:31:04.158469938 +0200
+diff -up kio-extras-19.04.0/nfs/CMakeLists.txt.0000~ kio-extras-19.04.0/nfs/CMakeLists.txt
+--- kio-extras-19.04.0/nfs/CMakeLists.txt.0000~	2019-04-11 09:05:52.000000000 +0200
++++ kio-extras-19.04.0/nfs/CMakeLists.txt	2019-04-13 15:58:22.849326223 +0200
 @@ -1,10 +1,14 @@
  ## Check for XDR functions
  include(CheckFunctionExists)
@@ -27,4 +28,4 @@
 +target_link_libraries(kio_nfs KF5::KIOCore KF5::I18n Qt5::Network tirpc)
  set_target_properties(kio_nfs PROPERTIES OUTPUT_NAME "nfs")
  
- install(TARGETS kio_nfs DESTINATION ${PLUGIN_INSTALL_DIR}/kf5/kio)
+ install(TARGETS kio_nfs DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/kio)
