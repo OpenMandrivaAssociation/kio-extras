@@ -14,6 +14,7 @@ Summary: KDE 5 I/O Extras
 URL: http://kde.org/
 License: GPL
 Group: System/Libraries
+BuildRequires: gperf
 BuildRequires: openslp-devel
 BuildRequires: pkgconfig(exiv2)
 BuildRequires: pkgconfig(libmtp)
@@ -31,6 +32,7 @@ BuildRequires: pkgconfig(Qt5Widgets)
 BuildRequires: pkgconfig(shared-mime-info)
 BuildRequires: pkgconfig(libssh) >= 0.8.5
 BuildRequires: pkgconfig(smbclient)
+BuildRequires: pkgconfig(taglib)
 BuildRequires: cmake(ECM)
 BuildRequires: cmake(KF5DNSSD)
 BuildRequires: cmake(KF5KDELibs4Support)
