@@ -3,13 +3,13 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: kio-extras
-Version:	 19.04.0
-Release:	1
+Version: 19.04.0
+Release: 1
 Source0: http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
 Patch0: kio-extras-5.1.0.1-link-tirpc-for-nfs.patch
 # https://bugzilla.samba.org/show_bug.cgi?id=12456
-Patch1:	kio-extras-smb_anon.patch
+Patch1: kio-extras-smb_anon.patch
 Summary: KDE 5 I/O Extras
 URL: http://kde.org/
 License: GPL
@@ -44,6 +44,7 @@ BuildRequires: cmake(KF5KHtml)
 BuildRequires: cmake(KF5Solid)
 BuildRequires: cmake(KF5Pty)
 BuildRequires: cmake(KF5Activities)
+BuildRequires: cmake(KF5SyntaxHighlighting)
 
 Requires: %{mklibname molletnetwork5 %{major}} = %{EVRD}
 Obsoletes: %{mklibname molletnetwork5 18} < %{EVRD}
@@ -67,8 +68,7 @@ Requires: %{mklibname kioarchive 5} = %{EVRD}
 Development files for the KIO Archive library
 
 %prep
-%setup -qn %{name}-%{plasmaver}
-%apply_patches
+%autosetup -n %{name}-%{plasmaver} -p1
 
 %cmake_kde5
 
