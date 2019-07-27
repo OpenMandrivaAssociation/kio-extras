@@ -3,7 +3,7 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: kio-extras
-Version: 19.04.2
+Version: 19.07.80
 Release: 1
 Source0: http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
@@ -82,7 +82,7 @@ Development files for the KIO Archive library
 %find_lang all --all-name --with-html
 
 %files -f all.lang
-%{_sysconfdir}/xdg/kio-extras.categories
+%{_datadir}/qlogging-categories5/kio-extras.categories
 %{_libdir}/qt5/plugins/*.so
 %{_libdir}/qt5/plugins/kf5/kio/*.so
 %{_libdir}/qt5/plugins/kf5/kiod/*.so
