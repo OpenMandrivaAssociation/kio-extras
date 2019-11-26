@@ -3,14 +3,13 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: kio-extras
-Version: 19.08.3
+Version: 19.11.80
 Release: 1
 Source0: http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
 Patch0: kio-extras-5.1.0.1-link-tirpc-for-nfs.patch
 # https://bugzilla.samba.org/show_bug.cgi?id=12456
 Patch1: kio-extras-smb_anon.patch
-Patch2: kio-extras-19.08.3-compile.patch
 Summary: KDE 5 I/O Extras
 URL: http://kde.org/
 License: GPL
@@ -88,7 +87,6 @@ Development files for the KIO Archive library
 %{_libdir}/qt5/plugins/kf5/kio/*.so
 %{_libdir}/qt5/plugins/kf5/kiod/*.so
 %{_libdir}/qt5/plugins/kf5/kded/*.so
-%{_libdir}/qt5/plugins/kf5/parts/*.so
 %{_datadir}/config.kcfg/*.kcfg
 %{_datadir}/dbus-1/interfaces/*.xml
 %{_datadir}/dbus-1/services/*.service
