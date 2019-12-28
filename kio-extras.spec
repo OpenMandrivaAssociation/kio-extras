@@ -3,9 +3,9 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: kio-extras
-Version: 19.11.90
+Version: 19.12.0
 Release: 1
-Source0: http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
+Source0: http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
 Patch0: kio-extras-5.1.0.1-link-tirpc-for-nfs.patch
 # https://bugzilla.samba.org/show_bug.cgi?id=12456
