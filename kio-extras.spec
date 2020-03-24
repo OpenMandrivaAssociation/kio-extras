@@ -3,11 +3,10 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: kio-extras
-Version: 19.12.3
+Version: 20.03.80
 Release: 1
 Source0: http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
-Patch0: kio-extras-5.1.0.1-link-tirpc-for-nfs.patch
 # https://bugzilla.samba.org/show_bug.cgi?id=12456
 Patch1: kio-extras-smb_anon.patch
 Summary: KDE 5 I/O Extras
@@ -47,6 +46,7 @@ BuildRequires: cmake(KF5Solid)
 BuildRequires: cmake(KF5Pty)
 BuildRequires: cmake(KF5Activities)
 BuildRequires: cmake(KF5SyntaxHighlighting)
+BuildRequires: cmake(KDSoap)
 
 Requires: %{mklibname molletnetwork5 %{major}} = %{EVRD}
 Obsoletes: %{mklibname molletnetwork5 18} < %{EVRD}
@@ -101,6 +101,7 @@ Development files for the KIO Archive library
 %{_datadir}/kservices5/*.protocol
 %{_datadir}/kservicetypes5/*.desktop
 %{_datadir}/solid/actions/solid_mtp.desktop
+%{_libdir}/qt5/plugins/kf5/kfileitemaction/kactivitymanagerd_fileitem_linking_plugin.so
 
 %files -n %{kioarchive_devel}
 %{_includedir}/KF5/*
