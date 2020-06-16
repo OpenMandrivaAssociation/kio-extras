@@ -4,7 +4,7 @@
 
 Name: kio-extras
 Version: 20.04.2
-Release: 1
+Release: 2
 Source0: http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
 # https://bugzilla.samba.org/show_bug.cgi?id=12456
@@ -47,12 +47,14 @@ BuildRequires: cmake(KF5Pty)
 BuildRequires: cmake(KF5Activities)
 BuildRequires: cmake(KF5SyntaxHighlighting)
 BuildRequires: cmake(KDSoap)
+BuildRequires: cmake(KF5ActivitiesStats)
 
 Requires: %{mklibname molletnetwork5 %{major}} = %{EVRD}
 Obsoletes: %{mklibname molletnetwork5 18} < %{EVRD}
 Obsoletes: %{mklibname molletnetwork5 17} < %{EVRD}
 Requires: %{mklibname kioarchive 5} = %{EVRD}
-
+Requires: kio
+%rename kio-mtp
 %define kioarchive_devel %{mklibname -d kioarchive}
 
 %libpackage molletnetwork5 %{major}
