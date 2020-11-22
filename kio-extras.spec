@@ -3,7 +3,7 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: kio-extras
-Version: 20.08.3
+Version: 20.11.80
 Release: 1
 Source0: http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
@@ -104,6 +104,7 @@ Development files for the KIO Archive library
 %{_datadir}/kservicetypes5/*.desktop
 %{_datadir}/solid/actions/solid_mtp.desktop
 %{_libdir}/qt5/plugins/kf5/kfileitemaction/kactivitymanagerd_fileitem_linking_plugin.so
+%{_libdir}/libexec/kf5/smbnotifier
 
 %files -n %{kioarchive_devel}
 %{_includedir}/KF5/*

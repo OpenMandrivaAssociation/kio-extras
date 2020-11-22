@@ -1,11 +1,12 @@
-diff -up kio-extras-20.03.80/smb/kio_smb_auth.cpp.1~ kio-extras-20.03.80/smb/kio_smb_auth.cpp
---- kio-extras-20.03.80/smb/kio_smb_auth.cpp.1~	2020-03-23 23:53:57.598432965 +0100
-+++ kio-extras-20.03.80/smb/kio_smb_auth.cpp	2020-03-23 23:56:02.078954567 +0100
-@@ -210,6 +210,7 @@ bool SMBSlave::auth_initialize_smbc()
-     smb_context->flags |= SMB_CTX_FLAG_USE_KERBEROS | SMB_CTX_FLAG_FALLBACK_AFTER_KERBEROS;
+diff -up kio-extras-20.11.80/smb/kio_smb_auth.cpp.1~ kio-extras-20.11.80/smb/kio_smb_auth.cpp
+diff -up kio-extras-20.11.80/smb/smbcontext.cpp.1~ kio-extras-20.11.80/smb/smbcontext.cpp
+--- kio-extras-20.11.80/smb/smbcontext.cpp.1~	2020-11-22 01:20:26.198348009 +0100
++++ kio-extras-20.11.80/smb/smbcontext.cpp	2020-11-22 01:20:30.578407677 +0100
+@@ -51,6 +51,7 @@ SMBContext::SMBContext(SMBAuthenticator
+     m_context->flags |= SMB_CTX_FLAG_USE_KERBEROS | SMB_CTX_FLAG_FALLBACK_AFTER_KERBEROS;
  #endif
  #endif /* DEPRECATED_SMBC_INTERFACE */
-+    smbc_setOptionUseCCache(smb_context, 0);
++    smbc_setOptionUseCCache(m_context.get(), 0);
  
-     if (!smbc_init_context(smb_context)) {
-         smbc_free_context(smb_context, 0);
+     if (!smbc_init_context(m_context.get())) {
+         m_context.reset();
