@@ -9,6 +9,8 @@ Source0: http://download.kde.org/%{stable}/release-service/%{version}/src/%{name
 Source1000: %{name}.rpmlintrc
 # https://bugzilla.samba.org/show_bug.cgi?id=12456
 Patch1: kio-extras-smb_anon.patch
+# Teach thumbnailers about AVIF and JXL
+Patch2: kio-extras-20.12.2-thumbnailers-avif-jxl.patch
 Summary: KDE 5 I/O Extras
 URL: http://kde.org/
 License: GPL
