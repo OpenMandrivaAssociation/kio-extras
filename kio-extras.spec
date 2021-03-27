@@ -4,7 +4,7 @@
 
 Name: kio-extras
 Version: 21.03.80
-Release: 1
+Release: 2
 Source0: http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
 # https://bugzilla.samba.org/show_bug.cgi?id=12456
@@ -50,8 +50,15 @@ BuildRequires: cmake(KF5Activities)
 BuildRequires: cmake(KF5SyntaxHighlighting)
 BuildRequires: cmake(KDSoap)
 BuildRequires: cmake(KF5ActivitiesStats)
-
-Requires: %{mklibname molletnetwork5 %{major}} = %{EVRD}
+# There's no point in a separate molletnetwork package.
+# This is an internal library that doesn't even ship
+# headers or a *.so file, so nothing outside of this
+# package can actually depend on it. There is never
+# a need for a compat package.
+# Kill it.
+Obsoletes: %{mklibname molletnetwork5 21} < %{EVRD}
+Obsoletes: %{mklibname molletnetwork5 20} < %{EVRD}
+Obsoletes: %{mklibname molletnetwork5 19} < %{EVRD}
 Obsoletes: %{mklibname molletnetwork5 18} < %{EVRD}
 Obsoletes: %{mklibname molletnetwork5 17} < %{EVRD}
 Requires: %{mklibname kioarchive 5} = %{EVRD}
@@ -59,7 +66,6 @@ Requires: kio
 %rename kio-mtp
 %define kioarchive_devel %{mklibname -d kioarchive}
 
-%libpackage molletnetwork5 %{major}
 %libpackage kioarchive 5
 
 %description
@@ -87,6 +93,7 @@ Development files for the KIO Archive library
 
 %files -f all.lang
 %{_datadir}/qlogging-categories5/kio-extras.categories
+%{_libdir}/libmolletnetwork5.so.*
 %{_libdir}/qt5/plugins/*.so
 %{_libdir}/qt5/plugins/kf5/kio/*.so
 %{_libdir}/qt5/plugins/kf5/kiod/*.so
