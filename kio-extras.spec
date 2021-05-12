@@ -3,7 +3,7 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: kio-extras
-Version: 21.04.0
+Version: 21.04.1
 Release: 1
 Source0: http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
@@ -11,6 +11,7 @@ Source1000: %{name}.rpmlintrc
 Patch1: kio-extras-smb_anon.patch
 # Teach thumbnailers about AVIF and JXL
 Patch2: kio-extras-20.12.2-thumbnailers-avif-jxl.patch
+Patch3: kio-extras-21.04.1-compile.patch
 Summary: KDE 5 I/O Extras
 URL: http://kde.org/
 License: GPL
