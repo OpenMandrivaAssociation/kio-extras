@@ -3,7 +3,7 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: kio-extras
-Version: 21.04.2
+Version: 21.07.90
 Release: 1
 Source0: http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
@@ -11,7 +11,6 @@ Source1000: %{name}.rpmlintrc
 Patch1: kio-extras-smb_anon.patch
 # Teach thumbnailers about AVIF and JXL
 Patch2: kio-extras-20.12.2-thumbnailers-avif-jxl.patch
-Patch3: kio-extras-21.04.1-compile.patch
 Summary: KDE 5 I/O Extras
 URL: http://kde.org/
 License: GPL
@@ -94,25 +93,21 @@ Development files for the KIO Archive library
 
 %files -f all.lang
 %{_datadir}/qlogging-categories5/kio-extras.categories
-%{_libdir}/libmolletnetwork5.so.*
 %{_libdir}/qt5/plugins/*.so
 %{_libdir}/qt5/plugins/kf5/kio/*.so
 %{_libdir}/qt5/plugins/kf5/kiod/*.so
 %{_libdir}/qt5/plugins/kf5/kded/*.so
 %{_datadir}/config.kcfg/*.kcfg
-%{_datadir}/dbus-1/interfaces/*.xml
 %{_datadir}/dbus-1/services/*.service
-%{_datadir}/mime/packages/kf5_network.xml
 %{_datadir}/remoteview
 %{_datadir}/kio_bookmarks
 %{_datadir}/kio_docfilter
 %{_datadir}/kio_info
-%{_datadir}/konqsidebartng/virtual_folders/remote/*.desktop
 %{_datadir}/konqueror/dirtree/remote/*.desktop
 %{_datadir}/kservices5/*.desktop
-%{_datadir}/kservices5/*.protocol
 %{_datadir}/kservicetypes5/*.desktop
 %{_datadir}/solid/actions/solid_mtp.desktop
+%{_datadir}/qlogging-categories5/kio-extras.renamecategories
 %{_libdir}/qt5/plugins/kf5/kfileitemaction/kactivitymanagerd_fileitem_linking_plugin.so
 %{_libdir}/libexec/kf5/smbnotifier
 
