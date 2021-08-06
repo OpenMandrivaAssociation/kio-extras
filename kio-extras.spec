@@ -34,6 +34,7 @@ BuildRequires: pkgconfig(shared-mime-info)
 BuildRequires: pkgconfig(libssh) >= 0.8.5
 BuildRequires: pkgconfig(smbclient)
 BuildRequires: pkgconfig(taglib)
+BuildRequires: pkgconfig(zlib)
 BuildRequires: cmake(ECM)
 BuildRequires: cmake(KF5DNSSD)
 BuildRequires: cmake(KF5KDELibs4Support)
