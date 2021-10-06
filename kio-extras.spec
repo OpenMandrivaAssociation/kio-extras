@@ -4,7 +4,7 @@
 
 Name: kio-extras
 Version: 21.08.1
-Release: 1
+Release: 2
 Source0: http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
 # https://bugzilla.samba.org/show_bug.cgi?id=12456
@@ -65,6 +65,7 @@ Obsoletes: %{mklibname molletnetwork5 17} < %{EVRD}
 Requires: %{mklibname kioarchive 5} = %{EVRD}
 Requires: kio
 %rename kio-mtp
+%rename kfileaudiopreview
 %define kioarchive_devel %{mklibname -d kioarchive}
 
 %libpackage kioarchive 5
