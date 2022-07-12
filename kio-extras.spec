@@ -3,8 +3,8 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: kio-extras
-Version: 22.04.2
-Release: 1
+Version:	22.04.3
+Release:	1
 Source0: http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
 # https://bugzilla.samba.org/show_bug.cgi?id=12456
