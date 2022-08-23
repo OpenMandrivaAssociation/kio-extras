@@ -3,7 +3,7 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: kio-extras
-Version:	22.07.90
+Version:	22.08.0
 Release:	1
 Source0: http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
@@ -49,6 +49,7 @@ BuildRequires: cmake(KF5Activities)
 BuildRequires: cmake(KF5SyntaxHighlighting)
 BuildRequires: cmake(KDSoap)
 BuildRequires: cmake(KF5ActivitiesStats)
+BuildRequires: cmake(KF5KExiv2)
 # There's no point in a separate molletnetwork package.
 # This is an internal library that doesn't even ship
 # headers or a *.so file, so nothing outside of this
