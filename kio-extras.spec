@@ -13,6 +13,7 @@ Summary: KDE 5 I/O Extras
 URL: http://kde.org/
 License: GPL
 Group: System/Libraries
+BuildRequires: appstream
 BuildRequires: gperf
 BuildRequires: openslp-devel
 BuildRequires: pkgconfig(exiv2)
