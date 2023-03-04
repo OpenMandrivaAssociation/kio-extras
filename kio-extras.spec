@@ -61,7 +61,7 @@ Obsoletes: %{mklibname molletnetwork5 20} < %{EVRD}
 Obsoletes: %{mklibname molletnetwork5 19} < %{EVRD}
 Obsoletes: %{mklibname molletnetwork5 18} < %{EVRD}
 Obsoletes: %{mklibname molletnetwork5 17} < %{EVRD}
-Requires: %{mklibname kioarchive 5} = %{EVRD}
+Requires: %{mklibname kioarchive} = %{EVRD}
 Requires: kio
 %rename kio-mtp
 %rename kfileaudiopreview
@@ -75,7 +75,7 @@ KDE 5 I/O Extras.
 %package -n %{kioarchive_devel}
 Summary: Development files for the KIO Archive library
 Group: Development/KDE and Qt
-Requires: %{mklibname kioarchive 5} = %{EVRD}
+Requires: %{mklibname kioarchive} = %{EVRD}
 
 %description -n %{kioarchive_devel}
 Development files for the KIO Archive library
