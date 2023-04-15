@@ -3,8 +3,8 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: kio-extras
-Version:	22.12.3
-Release:	3
+Version:	23.03.90
+Release:	1
 Source0: http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
 # https://bugzilla.samba.org/show_bug.cgi?id=12456
@@ -110,6 +110,7 @@ Development files for the KIO Archive library
 %{_datadir}/kservices5/*.desktop
 %{_datadir}/kservicetypes5/*.desktop
 %{_datadir}/solid/actions/solid_mtp.desktop
+%{_datadir}/solid/actions/solid_afc.desktop
 %{_datadir}/qlogging-categories5/kio-extras.renamecategories
 %{_libdir}/qt5/plugins/kf5/kfileitemaction/kactivitymanagerd_fileitem_linking_plugin.so
 %{_libdir}/qt5/plugins/kf5/kfileitemaction/forgetfileitemaction.so
