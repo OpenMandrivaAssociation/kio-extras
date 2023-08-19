@@ -9,6 +9,7 @@ Source0: http://download.kde.org/%{stable}/release-service/%{version}/src/%{name
 Source1000: %{name}.rpmlintrc
 # https://bugzilla.samba.org/show_bug.cgi?id=12456
 Patch1: kio-extras-smb_anon.patch
+Patch2:	https://invent.kde.org/network/kio-extras/-/commit/30c4da4a91a25c3e44b7558d14e3728c2d9aa8cd.patch
 Summary: KDE 5 I/O Extras
 URL: http://kde.org/
 License: GPL
