@@ -3,13 +3,12 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: kio-extras
-Version:	23.04.3
-Release:	2
+Version:	23.08.0
+Release:	1
 Source0: http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
 # https://bugzilla.samba.org/show_bug.cgi?id=12456
 Patch1: kio-extras-smb_anon.patch
-Patch2:	https://invent.kde.org/network/kio-extras/-/commit/30c4da4a91a25c3e44b7558d14e3728c2d9aa8cd.patch
 Summary: KDE 5 I/O Extras
 URL: http://kde.org/
 License: GPL
@@ -121,5 +120,5 @@ Development files for the KIO Archive library
 %{_libdir}/libexec/kf5/smbnotifier
 
 %files -n %{kioarchive_devel}
-%{_includedir}/KF5/*
+%{_includedir}/KioArchive
 %{_libdir}/cmake/KioArchive
