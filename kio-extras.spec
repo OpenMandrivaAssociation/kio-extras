@@ -4,7 +4,7 @@
 
 Name: kio-extras
 Version:	23.08.4
-Release:	2
+Release:	3
 Source0: http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
 # https://bugzilla.samba.org/show_bug.cgi?id=12456
