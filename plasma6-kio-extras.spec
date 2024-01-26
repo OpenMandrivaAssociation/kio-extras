@@ -4,7 +4,7 @@
 
 Name: plasma6-kio-extras
 Version:	24.01.90
-Release:	3
+Release:	1
 Source0: http://download.kde.org/%{stable}/release-service/%{version}/src/kio-extras-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
 # https://bugzilla.samba.org/show_bug.cgi?id=12466
@@ -20,14 +20,15 @@ BuildRequires: pkgconfig(libmtp)
 BuildRequires: pkgconfig(libtirpc)
 BuildRequires: pkgconfig(OpenEXR)
 BuildRequires: pkgconfig(phonon4qt6)
-BuildRequires: pkgconfig(Qt6Core)
-BuildRequires: pkgconfig(Qt6DBus)
-BuildRequires: pkgconfig(Qt6Gui)
-BuildRequires: pkgconfig(Qt6Network)
-BuildRequires: pkgconfig(Qt6Sql)
-BuildRequires: pkgconfig(Qt6Svg)
-BuildRequires: pkgconfig(Qt6Test)
-BuildRequires: pkgconfig(Qt6Widgets)
+BuildRequires: cmake(Qt6Core)
+BuildRequires: cmake(Qt6Core5Compat)
+BuildRequires: cmake(Qt6DBus)
+BuildRequires: cmake(Qt6Gui)
+BuildRequires: cmake(Qt6Network)
+BuildRequires: cmake(Qt6Sql)
+BuildRequires: cmake(Qt6Svg)
+BuildRequires: cmake(Qt6Test)
+BuildRequires: cmake(Qt6Widgets)
 BuildRequires: pkgconfig(shared-mime-info)
 BuildRequires: pkgconfig(libssh) >= 0.8.6
 BuildRequires: pkgconfig(smbclient)
