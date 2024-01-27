@@ -29,6 +29,7 @@ BuildRequires: cmake(Qt6Sql)
 BuildRequires: cmake(Qt6Svg)
 BuildRequires: cmake(Qt6Test)
 BuildRequires: cmake(Qt6Widgets)
+BuildRequires: cmake(QCoro6)
 BuildRequires: pkgconfig(shared-mime-info)
 BuildRequires: pkgconfig(libssh) >= 0.8.6
 BuildRequires: pkgconfig(smbclient)
