@@ -3,7 +3,7 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: plasma6-kio-extras
-Version:	24.01.90
+Version:	24.01.95
 Release:	1
 Source0: http://download.kde.org/%{stable}/release-service/%{version}/src/kio-extras-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
@@ -54,6 +54,7 @@ BuildRequires: cmake(PlasmaActivities)
 BuildRequires: cmake(KF6SyntaxHighlighting)
 BuildRequires: cmake(PlasmaActivitiesStats)
 BuildRequires: cmake(KExiv2Qt6)
+BuildRequires: cmake(KDSoapWSDiscoveryClient)
 BuildRequires: kdsoap-qt6-devel
 # There's no point in a separate molletnetwork package.
 # This is an internal library that doesn't even ship
