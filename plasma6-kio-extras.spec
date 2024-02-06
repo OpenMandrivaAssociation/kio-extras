@@ -56,24 +56,13 @@ BuildRequires: cmake(PlasmaActivitiesStats)
 BuildRequires: cmake(KExiv2Qt6)
 BuildRequires: cmake(KDSoapWSDiscoveryClient)
 BuildRequires: kdsoap-qt6-devel
-# There's no point in a separate molletnetwork package.
-# This is an internal library that doesn't even ship
-# headers or a *.so file, so nothing outside of this
-# package can actually depend on it. There is never
-# a need for a compat package.
-# Kill it.
-Obsoletes: %{mklibname molletnetwork6 21} < %{EVRD}
-Obsoletes: %{mklibname molletnetwork6 20} < %{EVRD}
-Obsoletes: %{mklibname molletnetwork6 19} < %{EVRD}
-Obsoletes: %{mklibname molletnetwork6 18} < %{EVRD}
-Obsoletes: %{mklibname molletnetwork6 17} < %{EVRD}
-Requires: %{mklibname kioarchive} = %{EVRD}
+Requires: %{mklibname kioarchive6} = %{EVRD}
 Requires: kio
 %rename kio-mtp
 %rename kfileaudiopreview
-%define kioarchive_devel %{mklibname -d kioarchive}
+%define kioarchive_devel %{mklibname -d kioarchive6}
 
-%libpackage kioarchive 6
+%libpackage kioarchive6 6
 
 %description
 KDE 6 I/O Extras.
@@ -81,7 +70,7 @@ KDE 6 I/O Extras.
 %package -n %{kioarchive_devel}
 Summary: Development files for the KIO Archive library
 Group: Development/KDE and Qt
-Requires: %{mklibname kioarchive} = %{EVRD}
+Requires: %{mklibname kioarchive6} = %{EVRD}
 
 %description -n %{kioarchive_devel}
 Development files for the KIO Archive library
@@ -102,28 +91,32 @@ Development files for the KIO Archive library
 
 %files -f all.lang
 %{_datadir}/qlogging-categories6/kio-extras.categories
-%{_libdir}/qt6/plugins/*.so
-%{_libdir}/qt6/plugins/kf6/kio/*.so
-%{_libdir}/qt6/plugins/kf6/kiod/*.so
-%{_libdir}/qt6/plugins/kf6/kded/*.so
-%{_libdir}/qt6/plugins/kf6/thumbcreator
+%{_qtdir}/plugins/*.so
+%{_qtdir}/plugins/kf6/kio/*.so
+%{_qtdir}/plugins/kf6/kiod/*.so
+%{_qtdir}/plugins/kf6/kded/*.so
+%{_qtdir}/plugins/kf6/kfileitemaction/kactivitymanagerd_fileitem_linking_plugin.so
+%{_qtdir}/plugins/kf6/kfileitemaction/forgetfileitemaction.so
+%{_qtdir}/plugins/kf6/thumbcreator
+%{_qtdir}/plugins/plasma/kcms/systemsettings_qwidgets/kcm_netpref.so
+%{_qtdir}/plugins/plasma/kcms/systemsettings_qwidgets/kcm_proxy.so
+%{_qtdir}/plugins/plasma/kcms/systemsettings_qwidgets/kcm_webshortcuts.so
 %{_datadir}/mime/packages/org.kde.kio.smb.xml
 %{_datadir}/config.kcfg/*.kcfg
 %{_datadir}/dbus-1/services/*.service
 %{_datadir}/remoteview
-%{_datadir}/kio_bookmarks
 %{_datadir}/kio_docfilter
 %{_datadir}/kio_info
 %{_datadir}/konqueror/dirtree/remote/*.desktop
-%{_datadir}/kservices6/*.desktop
-%{_datadir}/kservicetypes6/*.desktop
 %{_datadir}/solid/actions/solid_mtp.desktop
 %{_datadir}/solid/actions/solid_afc.desktop
 %{_datadir}/qlogging-categories6/kio-extras.renamecategories
-%{_libdir}/qt6/plugins/kf6/kfileitemaction/kactivitymanagerd_fileitem_linking_plugin.so
-%{_libdir}/qt6/plugins/kf6/kfileitemaction/forgetfileitemaction.so
 %{_libdir}/libexec/kf6/smbnotifier
+%{_datadir}/applications/kcm_netpref.desktop
+%{_datadir}/applications/kcm_proxy.desktop
+%{_datadir}/applications/kcm_trash.desktop
+%{_datadir}/applications/kcm_webshortcuts.desktop
 
 %files -n %{kioarchive_devel}
-%{_includedir}/KioArchive
-%{_libdir}/cmake/KioArchive
+%{_includedir}/KioArchive6
+%{_libdir}/cmake/KioArchive6
