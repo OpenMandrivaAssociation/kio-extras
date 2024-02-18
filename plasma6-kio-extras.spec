@@ -1,11 +1,18 @@
+%define git 20240218
+%define gitbranch release/24.02
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 %define major %(echo %{version} |cut -d. -f1)
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: plasma6-kio-extras
-Version:	24.01.95
-Release:	1
-Source0: http://download.kde.org/%{stable}/release-service/%{version}/src/kio-extras-%{version}.tar.xz
+Version:	24.01.96
+Release:	%{?git:0.%{git}.}1
+%if 0%{?git:1}
+Source0:	https://invent.kde.org/network/kio-extras/-/archive/%{gitbranch}/kio-extras-%{gitbranchd}.tar.bz2#/kio-extras-%{git}.tar.bz2
+%else
+Source0:	https://download.kde.org/%{stable}/release-service/%{version}/src/kio-extras-%{version}.tar.xz
+%endif
 Source1000: %{name}.rpmlintrc
 # https://bugzilla.samba.org/show_bug.cgi?id=12466
 Patch1: kio-extras-smb_anon.patch
@@ -76,7 +83,7 @@ Requires: %{mklibname kioarchive6} = %{EVRD}
 Development files for the KIO Archive library
 
 %prep
-%autosetup -n kio-extras-%{plasmaver} -p1
+%autosetup -p1 -n kio-extras-%{?git:%{gitbranchd}}%{!?git:%{version}}
 
 %cmake \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
