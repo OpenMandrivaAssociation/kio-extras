@@ -64,7 +64,7 @@ BuildRequires: cmake(KExiv2Qt6)
 BuildRequires: cmake(KDSoapWSDiscoveryClient)
 BuildRequires: kdsoap-qt6-devel
 Requires: %{mklibname kioarchive6} = %{EVRD}
-Requires: plasma6-kio
+Requires: kf6-kio
 %define kioarchive_devel %{mklibname -d kioarchive6}
 
 %libpackage kioarchive6 6
