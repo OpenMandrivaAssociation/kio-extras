@@ -7,7 +7,7 @@
 
 Name: plasma6-kio-extras
 Version:	24.01.96
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/network/kio-extras/-/archive/%{gitbranch}/kio-extras-%{gitbranchd}.tar.bz2#/kio-extras-%{git}.tar.bz2
 %else
@@ -64,9 +64,7 @@ BuildRequires: cmake(KExiv2Qt6)
 BuildRequires: cmake(KDSoapWSDiscoveryClient)
 BuildRequires: kdsoap-qt6-devel
 Requires: %{mklibname kioarchive6} = %{EVRD}
-Requires: kio
-%rename kio-mtp
-%rename kfileaudiopreview
+Requires: plasma6-kio
 %define kioarchive_devel %{mklibname -d kioarchive6}
 
 %libpackage kioarchive6 6
