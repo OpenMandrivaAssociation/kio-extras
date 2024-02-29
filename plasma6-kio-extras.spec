@@ -1,4 +1,4 @@
-%define git 20240218
+#define git 20240218
 %define gitbranch release/24.02
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 %define major %(echo %{version} |cut -d. -f1)
@@ -6,8 +6,8 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: plasma6-kio-extras
-Version:	24.01.96
-Release:	%{?git:0.%{git}.}2
+Version:	24.02.0
+Release:	%{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/network/kio-extras/-/archive/%{gitbranch}/kio-extras-%{gitbranchd}.tar.bz2#/kio-extras-%{git}.tar.bz2
 %else
