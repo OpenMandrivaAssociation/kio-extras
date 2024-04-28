@@ -66,6 +66,8 @@ Obsoletes: %{mklibname molletnetwork5 18} < %{EVRD}
 Obsoletes: %{mklibname molletnetwork5 17} < %{EVRD}
 Requires: %{mklibname kioarchive} = %{EVRD}
 Requires: kio
+# For shared files (desktop files and all)
+Requires: plasma6-kio-extras
 %rename kio-mtp
 %rename kfileaudiopreview
 %define kioarchive_devel %{mklibname -d kioarchive}
@@ -102,18 +104,8 @@ Development files for the KIO Archive library
 %{_libdir}/qt5/plugins/kf5/kiod/*.so
 %{_libdir}/qt5/plugins/kf5/kded/*.so
 %{_libdir}/qt5/plugins/kf5/thumbcreator
-%{_datadir}/mime/packages/org.kde.kio.smb.xml
-%{_datadir}/config.kcfg/*.kcfg
-%{_datadir}/dbus-1/services/*.service
-%{_datadir}/remoteview
-%{_datadir}/kio_bookmarks
-%{_datadir}/kio_docfilter
-%{_datadir}/kio_info
-%{_datadir}/konqueror/dirtree/remote/*.desktop
 %{_datadir}/kservices5/*.desktop
 %{_datadir}/kservicetypes5/*.desktop
-%{_datadir}/solid/actions/solid_mtp.desktop
-%{_datadir}/solid/actions/solid_afc.desktop
 %{_datadir}/qlogging-categories5/kio-extras.renamecategories
 %{_libdir}/qt5/plugins/kf5/kfileitemaction/kactivitymanagerd_fileitem_linking_plugin.so
 %{_libdir}/qt5/plugins/kf5/kfileitemaction/forgetfileitemaction.so
