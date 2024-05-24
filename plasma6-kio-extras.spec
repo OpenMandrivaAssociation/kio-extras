@@ -6,7 +6,7 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: plasma6-kio-extras
-Version:	24.02.2
+Version:	24.05.0
 Release:	%{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/network/kio-extras/-/archive/%{gitbranch}/kio-extras-%{gitbranchd}.tar.bz2#/kio-extras-%{git}.tar.bz2
@@ -110,7 +110,6 @@ Development files for the KIO Archive library
 %{_datadir}/config.kcfg/*.kcfg
 %{_datadir}/dbus-1/services/*.service
 %{_datadir}/remoteview
-%{_datadir}/kio_docfilter
 %{_datadir}/kio_info
 %{_datadir}/konqueror/dirtree/remote/*.desktop
 %{_datadir}/solid/actions/solid_mtp.desktop
