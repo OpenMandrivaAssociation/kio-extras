@@ -17,7 +17,7 @@ Source1000: %{name}.rpmlintrc
 # https://bugzilla.samba.org/show_bug.cgi?id=12466
 Patch1: kio-extras-smb_anon.patch
 Summary: KDE 6 I/O Extras
-URL: http://kde.org/
+URL: https://kde.org/
 License: GPL
 Group: System/Libraries
 BuildRequires: gperf
