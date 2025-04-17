@@ -1,0 +1,12 @@
+diff -up kio-extras-25.04.0/kcms/proxy/wpad-detector/main.cpp.omv~ kio-extras-25.04.0/kcms/proxy/wpad-detector/main.cpp
+--- kio-extras-25.04.0/kcms/proxy/wpad-detector/main.cpp.omv~	2025-04-17 22:15:59.161599888 +0200
++++ kio-extras-25.04.0/kcms/proxy/wpad-detector/main.cpp	2025-04-17 22:16:03.963435466 +0200
+@@ -1,7 +1,7 @@
+ // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
+ // SPDX-FileCopyrightText: 2024 Harald Sitter <sitter@kde.org>
+ 
+-#include <libproxy/proxy.h>
++#include <proxy.h>
+ 
+ #include <memory>
+ 

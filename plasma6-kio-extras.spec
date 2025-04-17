@@ -6,8 +6,8 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: plasma6-kio-extras
-Version:	24.12.3
-Release:	%{?git:0.%{git}.}3
+Version:	25.04.0
+Release:	%{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/network/kio-extras/-/archive/%{gitbranch}/kio-extras-%{gitbranchd}.tar.bz2#/kio-extras-%{git}.tar.bz2
 %else
@@ -16,6 +16,7 @@ Source0:	https://download.kde.org/%{stable}/release-service/%{version}/src/kio-e
 Source1000: %{name}.rpmlintrc
 # https://bugzilla.samba.org/show_bug.cgi?id=12466
 Patch1: kio-extras-smb_anon.patch
+Patch2: kio-extras-libproxy-header-location.patch
 Summary: KDE 6 I/O Extras
 URL: https://kde.org/
 License: GPL
@@ -121,6 +122,7 @@ Development files for the KIO Archive library
 %{_datadir}/applications/kcm_trash.desktop
 %{_datadir}/applications/kcm_webshortcuts.desktop
 %{_datadir}/kio_filenamesearch
+%{_libdir}/libexec/wpad-detector-helper
 
 %files -n %{kioarchive_devel}
 %{_includedir}/KioArchive6
