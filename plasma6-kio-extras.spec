@@ -63,6 +63,7 @@ BuildRequires: cmake(KF6SyntaxHighlighting)
 BuildRequires: cmake(PlasmaActivitiesStats)
 BuildRequires: cmake(KExiv2Qt6)
 BuildRequires: cmake(KDSoapWSDiscoveryClient)
+BuildRequires: cmake(KF6Notifications)
 BuildRequires: kdsoap-qt6-devel
 Requires: %{mklibname kioarchive6} = %{EVRD}
 Requires: kf6-kio
