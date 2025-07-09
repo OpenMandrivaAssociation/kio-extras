@@ -5,7 +5,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
-Name: plasma6-kio-extras
+Name: kio-extras
 Version:	25.04.0
 Release:	%{?git:0.%{git}.}1
 %if 0%{?git:1}
