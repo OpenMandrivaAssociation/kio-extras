@@ -6,7 +6,7 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: kio-extras
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/network/kio-extras/-/archive/%{gitbranch}/kio-extras-%{gitbranchd}.tar.bz2#/kio-extras-%{git}.tar.bz2
@@ -71,10 +71,15 @@ Requires: %{mklibname kioarchive6} = %{EVRD}
 Requires: kf6-kio
 %define kioarchive_devel %{mklibname -d kioarchive6}
 
-%libpackage kioarchive6 6
+%rename plasma6-kio-extras
+
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %description
 KDE 6 I/O Extras.
+
+%libpackage kioarchive6 6
 
 %package -n %{kioarchive_devel}
 Summary: Development files for the KIO Archive library
@@ -84,21 +89,7 @@ Requires: %{mklibname kioarchive6} = %{EVRD}
 %description -n %{kioarchive_devel}
 Development files for the KIO Archive library
 
-%prep
-%autosetup -p1 -n kio-extras-%{?git:%{gitbranchd}}%{!?git:%{version}}
-
-%cmake \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja -C build
-
-%install
-%ninja_install -C build
-%find_lang all --all-name --with-html
-
-%files -f all.lang
+%files -f %{name}.lang
 %{_datadir}/qlogging-categories6/kio-extras.categories
 %{_qtdir}/plugins/*.so
 %{_qtdir}/plugins/kf6/kio/*.so
