@@ -6,7 +6,7 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: kio-extras
-Version:	25.08.1
+Version:	25.08.2
 Release:	%{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/network/kio-extras/-/archive/%{gitbranch}/kio-extras-%{gitbranchd}.tar.bz2#/kio-extras-%{git}.tar.bz2
