@@ -1,12 +1,11 @@
-diff -up kio-extras-24.05.0/smb/smbcontext.cpp.1~ kio-extras-24.05.0/smb/smbcontext.cpp
---- kio-extras-24.05.0/smb/smbcontext.cpp.1~	2024-05-24 16:34:13.087337052 +0200
-+++ kio-extras-24.05.0/smb/smbcontext.cpp	2024-05-24 16:43:09.073192483 +0200
-@@ -36,6 +36,8 @@ SMBContext::SMBContext(SMBAuthenticator
+--- a/smb/smbcontext.cpp
++++ b/smb/smbcontext.cpp
+@@ -35,6 +35,8 @@ SMBContext::SMBContext(SMBAuthenticator *authenticator)
+     /* Enable Kerberos support */
      smbc_setOptionUseKerberos(m_context.get(), 1);
      smbc_setOptionFallbackAfterKerberos(m_context.get(), 1);
- 
++    /* Do not pick up a leftover Kerberos ccache for anonymous shares. */
 +    smbc_setOptionUseCCache(m_context.get(), 0);
-+
-     if (!smbc_init_context(m_context.get())) {
-         m_context.reset();
-         return;
+ 
+     // libsmbclient puts $USER in place of a user missing from the url. An empty default user leaves
+     // it empty, so that the authenticator sees which urls name no user.
